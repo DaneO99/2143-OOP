@@ -1,0 +1,113 @@
+#include <iostream>
+#include <stdexcept>
+
+class Fraction {
+private:
+    int numerator;
+    int denominator;
+
+public:
+    // Constructor
+    Fraction(int num, int den) : numerator(num), denominator(den) {
+        // Validate that the denominator is not zero
+        if (den == 0) {
+            throw std::invalid_argument("Denominator cannot be zero");
+        }
+        // Standardize the fraction (e.g., keep negative sign in the numerator)
+        if (denominator < 0) {
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+    }
+
+    // Greatest Common Denominator (GCD)
+    int gcd(int a, int b) {
+        while (b != 0) {
+            int remainder = a % b;
+            a = b;
+            b = remainder;
+        }
+        return a;
+    }
+
+    // Least Common Multiple (LCM)
+    int lcm(int a, int b) {
+        return (a / gcd(a, b)) * b;
+    }
+
+    // Overloaded addition operator
+    Fraction operator+(const Fraction& other) {
+        int commonDenominator = lcm(this->denominator, other.denominator);
+        int adjustedNumerator1 = this->numerator * (commonDenominator / this->denominator);
+        int adjustedNumerator2 = other.numerator * (commonDenominator / other.denominator);
+        int newNumerator = adjustedNumerator1 + adjustedNumerator2;
+        int commonDivisor = gcd(newNumerator, commonDenominator);
+        return Fraction(newNumerator / commonDivisor, commonDenominator / commonDivisor);
+    }
+
+    // Overloaded subtraction operator
+    Fraction operator-(const Fraction& other) {
+        int commonDenominator = lcm(this->denominator, other.denominator);
+        int adjustedNumerator1 = this->numerator * (commonDenominator / this->denominator);
+        int adjustedNumerator2 = other.numerator * (commonDenominator / other.denominator);
+        int newNumerator = adjustedNumerator1 - adjustedNumerator2;
+        int commonDivisor = gcd(newNumerator, commonDenominator);
+        return Fraction(newNumerator / commonDivisor, commonDenominator / commonDivisor);
+    }
+
+    // Overloaded multiplication operator
+    Fraction operator*(const Fraction& other) {
+        int newNumerator = this->numerator * other.numerator;
+        int newDenominator = this->denominator * other.denominator;
+        int commonDivisor = gcd(newNumerator, newDenominator);
+        return Fraction(newNumerator / commonDivisor, newDenominator / commonDivisor);
+    }
+
+    // Overloaded division operator
+    Fraction operator/(const Fraction& other) {
+        int newNumerator = this->numerator * other.denominator;
+        int newDenominator = this->denominator * other.numerator;
+        if (newDenominator == 0) {
+            throw std::invalid_argument("Division by zero is not allowed");
+        }
+        int commonDivisor = gcd(newNumerator, newDenominator);
+        return Fraction(newNumerator / commonDivisor, newDenominator / commonDivisor);
+    }
+
+    // Overloaded equality operator (==)
+    bool operator==(const Fraction& other) {
+        return (this->numerator * other.denominator) == (this->denominator * other.numerator);
+    }
+
+    // Overload output operator (<<) for printing fractions
+    friend std::ostream& operator<<(std::ostream& os, const Fraction& frac) {
+        os << frac.numerator << "/" << frac.denominator;
+        return os;
+    }
+
+};
+
+int main() {
+    try {
+        Fraction frac1(1, 2);
+        Fraction frac2(3, 4);
+
+        Fraction resultAdd = frac1 + frac2;
+        std::cout << "Addition: " << resultAdd << std::endl; 
+
+        Fraction resultSub = frac1 - frac2;
+        std::cout << "Subtraction: " << resultSub << std::endl; 
+
+        Fraction resultMul = frac1 * frac2;
+        std::cout << "Multiplication: " << resultMul << std::endl; 
+
+        Fraction resultDiv = frac1 / frac2;
+        std::cout << "Division: " << resultDiv << std::endl;
+
+        std::cout << "Equality: " << (frac1 == frac2) << std::endl; // Output: 0 (false)
+    } catch (std::invalid_argument& e) {
+        std::cerr << e.what() << std::endl;
+    }
+
+    return 0;
+}

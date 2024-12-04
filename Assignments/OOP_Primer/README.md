@@ -8,9 +8,12 @@ In C++, an interface can be simulated using a class where all methods are pure v
 Abstraction involves hiding the complex reality while exposing only the necessary parts of an object. It helps in reducing programming complexity and increasing efficiency.
 ## Access Modifiers:
 These keywords control how members (variables, methods) of a class can be accessed.
-# Public: Members are accessible from any part of the program.
-# Private: Members cannot be accessed (or viewed) from outside the class.
-# Protected: Members cannot be accessed from outside the class, except by inherited classes.
+# Public: 
+Members are accessible from any part of the program.
+# Private: 
+Members cannot be accessed (or viewed) from outside the class.
+# Protected: 
+Members cannot be accessed from outside the class, except by inherited classes.
 ## Attributes/Properties:
 These are data members of a class that hold data specific to an object and define its state. Properties can have public, protected, or private visibility.
 ## Class Variables:

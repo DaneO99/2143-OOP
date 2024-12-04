@@ -2,6 +2,12 @@
 
 ## Abstract Classes:
 These are classes that cannot be instantiated on their own and are typically used as base classes. They contain at least one pure virtual function, which forces derived classes to provide an implementation for these functions, thus implementing specific behaviors.
+```cpp
+class AbstractAnimal {
+public:
+    virtual void Speak() = 0; // Pure virtual function
+};
+```
 ## Interfaces:
 In C++, an interface can be simulated using a class where all methods are pure virtual. Interfaces define a set of methods that derived classes must implement, ensuring a consistent API regardless of the specific object's type.
 ## Abstraction:

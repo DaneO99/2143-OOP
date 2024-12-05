@@ -4,4 +4,4 @@
 |  1  | [A05](./Fractions) | [Fractions](./Fractions) |
 |  2  | [A04](./OOP_Primer) | [OOP-Primer](./OOP_Primer)  |
 |  3  | [PO2C](./Ncurses) | [Ncurses](./Ncurses)      |
-|  1  | [P02](./FakeAssignments/P02/README.md) | [Hello Mars ](./FakeAssignments/P02/README.md)       |
+|  1  | [P03](./KnuckleBones) | [Knuckle Bones](./KnuckleBones)       |

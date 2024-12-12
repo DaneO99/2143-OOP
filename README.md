@@ -4,8 +4,8 @@
 ## Assignments
 |  #  | Folder Link                            | Assignment Description                               |
 | :-: | -------------------------------------- | ---------------------------------------------------- |
-|  1  | [A05](./Fractions) | [Fractions](./Fractions) |
-|  2  | [A04](./OOP_Primer) | [OOP-Primer](./OOP_Primer)  |
-|  3  | [PO2C](./Ncurses) | [Ncurses](./Ncurses)      |
-|  4  | [P03](./KnuckleBones) | [Knuckle Bones](./KnuckleBones)       |
+|  1  | [A05](Assignments/Fractions) | [Fractions](Assignments/Fractions) |
+|  2  | [A04](Assignments/OOP_Primer) | [OOP-Primer](Assignments/OOP_Primer)  |
+|  3  | [PO2C](Assignments/Ncurses) | [Ncurses](Assignments/Ncurses)      |
+|  4  | [P03](Assignments/KnuckleBones) | [Knuckle Bones](Assignments/KnuckleBones)       |
 |  5  | [P03](Assignments/SFML) | [Knuckle Bones](Assignments/SFML)       |

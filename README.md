@@ -8,4 +8,4 @@
 |  2  | [A04](Assignments/OOP_Primer) | [OOP-Primer](Assignments/OOP_Primer)  |
 |  3  | [PO2C](Assignments/Ncurses) | [Ncurses](Assignments/Ncurses)      |
 |  4  | [P03](Assignments/KnuckleBones) | [Knuckle Bones](Assignments/KnuckleBones)       |
-|  5  | [P03](Assignments/SFML) | [Knuckle Bones](Assignments/SFML)       |
+|  5  | [P03C](Assignments/SFML) | [Knuckle Bones(SFML)](Assignments/SFML)       |
